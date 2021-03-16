@@ -1,0 +1,33 @@
+ime":"2020-05-08T01:08:30.9825241+08:00","level":"-","prefix":"echo","file":"recover.go","line":"73","message":"
+
+
+[PANIC RECOVER] interface conversion: interface {} is *jwt.Token, not int goroutine 19 [running]:\ngithub.com/lab
+stack/echo/v4/middleware.RecoverWithConfig.func1.1.1(0xa52918, 0x1000, 0x0, 0xb0a8a0, 0xc00022e280)\n\t
+
+
+G:/go/test-app/pkg/mod/github.com/labstack/echo/v4@v4.1.16/middleware/recover.go:71 +0xf5\npanic(0x9952e0, 0xc000262270)\n\t
+C:/Go/src/runtime/panic.go:969 +0x174\ncom.mzq.echo/app/http/models.CheckLogin(0xb0a8a0, 0xc00022e280, 0xc00022e300, 0xa53680)\n\t
+G:/go/test-app/src/com.mzq.echo/app/http/models/User.go:63 +0xe6\ncom.mzq.echo/routes.Router.func2.
+1(0xb0a8a0, 0xc00022e280, 0x3, 0x9924e0)\n\t
+
+
+
+
+
+G:/go/test-app/src/com.mzq.echo/routes/web.go:74 +0x45\ngithub.com/labstack/echo/v4/middleware.JWTWithConfig.func2.1(0xb0a8a0, 0xc00022e280, 0x0, 0x2030000)\n\tG:/go/test-app/pkg/mod/g
+ithub.com/labstack/echo/v4@v4.1.16/middleware/jwt.go:207 +0x3c7\ngithub.com/labstack/echo/v4.(*Echo).add.func1(0xb0a8a0, 0xc00022e280, 0x30000, 0x2030000)\n\tG:/go/test-app/pkg/mod/github.com/labstack/echo/v4@v4.1.16/echo.go:512
+ +0x91\ngithub.com/labstack/echo/v4/middleware.RecoverWithConfig.func1.1(0xb0a8a0, 0xc00022e280, 0x0, 0x0)\n\tG:/go/test-app/pkg/mod/github.com/labstack/echo/v4@v4.1.16/middleware/recover.go:78 +0x131\ngithub.com/labstack/echo/v
+4/middleware.LoggerWithConfig.func2.1(0xb0a8a0, 0xc00022e280, 0x0, 0x0)\n\tG:/go/test-app/pkg/mod/github.com/labstack/echo/v4@v4.1.16/middleware/logger.go:117 +0x137\ngithub.com/labstack/echo/v4.(*Echo).ServeHTTP(0xc0001f2000, 0
+xb003e0, 0xc0001f0380, 0xc000199000)\n\tG:/go/test-app/pkg/mod/github.com/labstack/echo/v4@v4.1.16/echo.go:623 +0x173\nnet/http.serverHandler.ServeHTTP(0xc0001f0000, 0xb003e0, 0xc0001f0380, 0xc000199000)\n\tC:/Go/src/net/http/se
+rver.go:2807 +0xaa\nnet/http.(*conn).serve(0xc00022e1e0, 0xb013a0, 0xc00019b380)\n\tC:/Go/src/net/http/server.go:1895 +0x873\ncreated by net/http.(*Server).Serve\n\tC:/Go/src/net/http/server.go:2933 +0x363\n\ngoroutine 1 [IO wai
+t]:\ninternal/poll.runtime_pollWait(0x15614c0, 0x72, 0xaf76a0)\n\tC:/Go/src/runtime/netpoll.go:203 +0x5c\ninternal/poll.(*pollDesc).wait(0xc0001edac8, 0x72, 0xe6f500, 0x0, 0x0)\n\tC:/Go/src/internal/poll/fd_poll_runtime.go:87 +0
+x4c\ninternal/poll.(*ioSrv).ExecIO(0xed4300, 0xc0001ed918, 0xc000266000, 0x1, 0x0, 0x180)\n\tC:/Go/src/internal/poll/fd_windows.go:228 +0x121\ninternal/poll.(*FD).acceptOne(0xc0001ed900, 0x180, 0xc0002321e0, 0x2, 0x2, 0xc0001ed9
+18, 0xc0000c7a28, 0xed8040, 0xa53638, 0xc0000c7ac8)\n\tC:/Go/src/internal/poll/fd_windows.go:896 +0xa9\ninternal/poll.(*FD).Accept(0xc0001ed900, 0xc0000c7b88, 0x0, 0x0, 0x0, 0x0, 0xc000000000, 0x0, 0x0, 0x0, ...)\n\tC:/Go/src/in
+ternal/poll/fd_windows.go:930 +0x15f\nnet.(*netFD).accept(0xc0001ed900, 0x1, 0x20, 0x2030000)\n\tC:/Go/src/net/fd_windows.go:193 +0x7b\nnet.(*TCPListener).accept(0xc000197ba0, 0x29e8d60800, 0x0, 0xc0000c7ca0)\n\tC:/Go/src/net/tc
+psock_posix.go:139 +0x39\nnet.(*TCPListener).AcceptTCP(0xc000197ba0, 0x8c805e62e463392b, 0x0, 0x8c805e62e463392b)\n\tC:/Go/src/net/tcpsock.go:248 +0x6c\ngithub.com/labstack/echo/v4.tcpKeepAliveListener.Accept(0xc000197ba0, 0xc00
+017a868, 0x4ca52d, 0x5eb4408e, 0x440805)\n\tG:/go/test-app/pkg/mod/github.com/labstack/echo/v4@v4.1.16/echo.go:859 +0x36\nnet/http.(*Server).Serve(0xc0001f0000, 0xaff120, 0xc0000cae98, 0x0, 0x0)\n\tC:/Go/src/net/http/server.go:2
+901 +0x264\ngithub.com/labstack/echo/v4.(*Echo).StartServer(0xc0001f2000, 0xc0001f0000, 0x1, 0x1)\n\tG:/go/test-app/pkg/mod/github.com/labstack/echo/v4@v4.1.16/echo.go:714 +0x38c\ngithub.com/labstack/echo/v4.(*Echo).Start(...)\n
+\tG:/go/test-app/pkg/mod/github.com/labstack/echo/v4@v4.1.16/echo.go:634\nmain.main()\n\tG:/go/test-app/src/com.mzq.echo/public/main/main.go:21 +0x29e\n\ngoroutine 21 [IO wait]:\ninternal/poll.runtime_pollWait(0x1561300, 0x72, 0
+xaf76a0)\n\tC:/Go/src/runtime/netpoll.go:203 +0x5c\ninternal/poll.(*pollDesc).wait(0xc0002641c8, 0x72, 0xe6f500, 0x0, 0x0)\n\tC:/Go/src/internal/poll/fd_poll_runtime.go:87 +0x4c\ninternal/poll.(*ioSrv).ExecIO(0xed4300, 0xc000264
+018, 0xa52d38, 0xc000058060, 0x0, 0x0)\n\tC:/Go/src/internal/poll/fd_windows.go:228 +0x121\ninternal/poll.(*FD).Read(0xc000264000, 0xc000062000, 0x1000, 0x1000, 0x0, 0x0, 0x0)\n\tC:/Go/src/internal/poll/fd_windows.go:527 +0x2fc\
+nnet.(*netFD).Read(0xc000264000, 0xc000062000\n"}

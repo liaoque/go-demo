@@ -1,0 +1,205 @@
+1) path/filepath filepath 包提供对文件路径的操作，兼容不同操作系统
+a) 常用函数
+⚫ Abs：绝对路径
+⚫ Base：文件名
+⚫ Clean：清除文件路径中.、..等字符
+⚫ Dir：文件文件目录
+⚫ Ext：获取文件后缀
+⚫ FromSlash：格式化路径分割符(\) ⚫ ToSlash：格式化路径分割符(/)
+⚫ Glob：获取匹配格式的文件路径切片
+⚫ IsAbs：判断是否为绝对路径
+⚫ Json：连接路径
+⚫ Match:判断路径是否匹配格式
+⚫ Split：分割文件目录和文件名
+⚫ SplitList：分割路径分割符(冒号或分号)连接的文件路径
+⚫ Walk：遍历目录中文件（子孙）
+
+
+2) os
+os 包提供了对文件、系统和进程的操作函数
+a) 文件操作
+常用常量：
+⚫ Stdin
+⚫ Stdout
+⚫ Stderr
+⚫ ModePerm：0777
+常用函数： ⚫ Chmod：修改文件权限
+⚫ Chown：修改文件所属用户，用户组
+⚫ Chtimes：修改文件访问时间和修改时间
+⚫ IsExist:与 os.Stat 一起用于判断文件存在
+⚫ IsNotExist:与 os.Stat 一起用于判断文件不存在
+⚫ Link:创建软链接
+⚫ Mkdir：创建文件夹
+⚫ MkdirAll:创建文件夹（父目录不存在逐层创建）
+⚫ Remove：移除文件或空文件夹
+⚫ RemoveAll：移除所有文件
+⚫ Rename：重命名
+
+常用结构体：
+⚫ File:对文件操作
+常用函数：
+➢ Create：创建文件并返回文件对象指针（文件不存在则创建，文件存在则清空）
+➢ Open：打开文件并返回文件对象指针
+➢ OpenFile：按指定权限打开文件，并返回文件指针对象
+
+常用方法：
+➢ Read：读取文件到字节切片
+➢ Write：写入字节切片到文件
+➢ WriteString：写入字符串到文件
+➢ Readdir：获取目录下所有文件信息
+➢ Readdirnames：获取目录下所有文件名
+➢ Seek：设置文件指针位置
+➢ Stat：获取文件状态信息
+➢ Sync：同步文件到硬盘
+➢ Close：关闭文件
+
+⚫ FileInfo：文件状态信息
+常用函数：
+➢ Lstat：获取文件路径文件信息（对于链接返回连接文件信息）
+➢ Stat：获取文件路径文件信息（对于链接返回连接到的文件的信息）
+常用方法：
+➢ Name：获取文件名
+➢ Size：获取文件大小
+➢ Mode：获取文件模式
+➢ ModTime：获取修改时间
+➢ IsDir：判断是否为文件夹
+
+⚫ FileMode：文件模式
+常用方法：
+➢ IsDir：判断是否为文件夹
+
+b) 系统操作
+常用函数:
+⚫ Environ：获取环境变量切片
+⚫ Setenv：设置环境变量
+⚫ Getenv：获取环境变量
+⚫ LookupEnv: 获取环境变量
+⚫ Unsetenv：清除环境变量
+⚫ Clearenv：清空环境变量
+⚫ Executable：获取当前执行文件路径
+⚫ Hostname：获取主机名
+⚫ TempDir：获取临时目录
+⚫ UserHomeDir：获取用户 home 目录
+⚫ UserCacheDir：获取用户缓存目录
+
+c) 进程操作
+常用常量：
+⚫ Args：获取命令行参数
+常用函数: ⚫ Getuid:获取进程所属用户 ID
+⚫ Getgid:获取进程所属用户组 ID
+⚫ Getpid：获取当前进程 id
+⚫ Getppid：获取父进程 id
+⚫ Getwd：获取工作目录
+⚫ Chdir：修改当前工作目录
+⚫ Exit：退出程序
+
+常用结构体:
+⚫ Process
+常用方法
+➢ FindProcess：根据进程 id 查找进程对象指针
+➢ StartProcess：启动进程
+➢ Kill：杀死进程
+➢ Release：释放进程资源信息
+➢ Signal：发送信息给进程
+➢ Wait：等待进程退出，并返回进程状态信息指针
+⚫ ProcessState
+常用方法: ➢ ExitCode：退出状态码
+➢ Exited：是否已经退出
+➢ Pid：进程 id
+➢ Success:是否成功退出
+➢ SystemTime：内核态执行时间
+➢ UserTime:用户态时间时间
+
+3) os/exec exec 包提供了启动一个外部进程并使用标准输入和输出进行通信
+a) 常用函数
+⚫ LookPath: 查找程序所在路径
+b) 常用结构体
+⚫ Cmd：执行命令 s
+常用函数
+➢ Command
+常用方法
+➢ Output: 执行并获取标准输出结果
+➢ Run：自行命令
+➢ Start：启动命令
+➢ Wait：与 Start 一起使用等待命令结束
+➢ StdoutPipe：输出管道
+➢ StdinPipe：输入管道
+
+4) fmt
+fmt 包提供输入和输出功能
+a) 常用函数
+⚫ Errorf：创建 error 类型
+⚫ Fprint：将数据输出到输出流中，不添加换行
+⚫ Fprintf：将数据输出到按照格式输出到输出流中
+⚫ Fprintln：将数据输出到输出流中，并添加换行
+⚫ Fscan：从输入流中读取数据
+⚫ Fscanf：从输入流中按照指定格式读取数据
+⚫ Fscanln：从输入流中读取数据，回车作为结束符
+⚫ Print：将数据输出到标准输出流中，不添加换行
+⚫ Printf：将数据输出到按照格式输出到标准输出流中
+⚫ Println：将数据输出到标准输出流中，并添加换行
+⚫ Scan：从标准输入流中读取数据
+⚫ Scanf：从标准输入流中按照指定格式读取数据
+⚫ Scanln：从标准输入流中读取数据，回车作为结束符
+⚫ Sprint：将数据转化为字符串，不添加换行
+⚫ Sprintf：将数据按照格式转化为格式为字符串
+⚫ Sprintln：将数据转化为字符串，并添加换行
+⚫ Sscan：从字符串中读取数据
+⚫ Sscanf:从字符串中按照格式读取数据
+⚫ Sscanln:从字符串中读取数据，回车作为结束符
+
+5) io io 包主要提供对流的基本操作功能
+a) 常用常量
+EOF：表示文件读取结束
+b) 常用函数
+⚫ Copy: 将输出流复制到输入流中
+⚫ CopyBuffer：将输出流复制到输出流中，同时拷贝到字节切片中
+⚫ CopyN：从输入流中复制 N 个字节到输出流
+⚫ WriteString：像输出流中写入字符串
+c) 常用结构体
+⚫ MultiReader: 将多个流合并为一个流，依次从不同流读取数据
+⚫ MultiWriter：将多个流合并为一个流，在写入时对所有流进行写入
+
+6) io/ioutil ioutil 包主要提供对流的实用操作功能
+a) 常用函数
+⚫ ReadAll：读取流中所有内容
+⚫ ReadDir：读取目录中文件信息
+⚫ ReadFile：读取文件
+⚫ TempDir：创建临时目录
+⚫ TempFile：创建临时文件
+⚫ WriteFile：写入文件
+
+
+7) bufio
+bufio 包提供缓冲流的功能
+a) 常用结构体
+⚫ Reader
+常用函数
+➢ NewReader：创建缓冲输入流
+常用方法
+➢ Read：读取数据到切片中
+➢ ReadLine：读取一行内容到字节切片中
+➢ ReadSlice：根据分隔符读取数据到字节切片
+➢ ReadString：根据分隔符读取数据到字符串
+➢ Reset：重设缓冲流
+➢ WriteTo：将数据写入到输出流
+
+⚫ Scanner
+常用函数
+➢ NewScanner：创建扫描对象
+常用方法
+➢ Scan：扫描数据
+➢ Split：定义流分割函数，默认空格
+➢ Text：读取数据
+➢ Err：获取错误
+
+⚫ Writer
+常用函数
+➢ NewWriter：创建缓冲输出流
+常用方法
+➢ Write：将字节切片内容写入
+➢ WriteString：将字符串写入
+➢ Reset：重置输出流
+➢ Flush: 刷新数据到输出流
+
+

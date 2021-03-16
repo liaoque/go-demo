@@ -1,0 +1,233 @@
+1) net
+net 包提供了对 socket 编程的支持，socket 编程分服务端和客户端编程，针对服务端可使用
+函数 Listen 创建监听服务，对于客户端可使用函数 Dial 连接服务器
+
+a) 常用函数
+⚫ Listen: 用于创建监听服务器
+⚫ ListenPacket：用于创建服务器端连接
+⚫ Dial:用于创建与服务器连接
+⚫ JoinHostPort：连接地址和端口
+⚫ SplitHostort：分割地址和端口
+⚫ LookupAddr：查找地址对应主机名
+⚫ LookupHost: 根据主机名查看地址
+⚫ ParseCIDR：解析 CIDR 格式 IP
+
+b) 常用结构体
+⚫ IP
+常用函数
+➢ ParseIP：解析地址
+➢ LookupIP：根据主机名查找 IP
+
+⚫ IPNet
+常用方法：
+➢ Contains：判断是否包含某 IP
+➢ Network：获取网络地址类型
+
+⚫ Addr
+常用函数
+➢ InterfaceAddrs：获取所有网络地址信息
+常用方法
+➢ Network：获取网络类型
+➢ String：获取网络地址
+⚫ Interfaces
+常用属性
+➢ Index
+➢ MTU
+➢ Name：网卡名
+➢ HardwareAddr：mac 地址
+➢ Flags：属性
+常用函数：
+➢ Interfaces：获取所有网卡
+➢ InterfaceByName：根据网卡名称获取网卡信息
+常用方法：
+➢ Addrs：获取网卡配置网络地址
+➢ MulticastAddrs：获取网卡广播地址
+
+c) 功能
+⚫ TCP 服务端开发流程
+➢ 创建监听服务
+➢ 循环接受客户端连接
+➢ 数据处理（向客户端发送数据/读客户端发送的数据）
+➢ 关闭监听服务
+
+⚫ TCP 客户端开发流程
+➢ 连接服务器
+➢ 数据处理（向服务端发送数据/读服务端发送的数据）
+➢ 关闭连接
+
+⚫ UDP 服务端开发流程
+➢ 创建监听服务
+➢ 数据处理（向客户端发送数据/读客户端发送的数据）
+➢ 关闭连接
+
+⚫ UDP 客户端开发流程
+➢ 创建连接
+➢ 数据处理（向服务器发送数据/读服务器发送的数据）
+➢ 关闭连接
+
+2) net/http
+http 包提供了 HTTP 服务器和客户端的开发接口，内置 web 服务器
+a) 针对 web 服务端开发流程为
+⚫ 定义处理器/处理器函数
+➢ 接收用户数据
+➢ 返回信息
+⚫ 启动 web 服务器
+b) 常用函数：
+⚫ 服务端
+⚫ ListenAndServer：使用 http 协议启动 web 服务
+⚫ ListenAndServeTLS：使用 https 协议启动 web 服务器
+⚫ Handle：定义 url 对应处理器
+⚫ HandleFunc：定义 url 对应处理器函数
+⚫ Redirect：重定向
+⚫ SetCookie：设置 Cookie
+⚫ FileServer: 创建静态文件处理器
+⚫ 客户端
+⚫ Get：发送 get 请求
+⚫ Head：发送 head 请求
+⚫ Post：发送 post 请求
+⚫ PostForm：发送提交表单请求(application/x-www-form-urlencoded)
+c) 常用结构体
+⚫ Request
+常用属性
+➢ Method: 请求方式
+
+➢ URL：请求的 URL
+➢ Proto：请求协议
+➢ Header：请求头
+➢ ContentLength：请求体字节数量
+➢ Body：请求体流对象
+➢ Form：获取提交的所有数据，需要手动调用 ParseForm
+➢ PostForm：获取所有 body 中提交的数据(application/x-www-form-urlencoded) ，
+需要手动调用 ParseForm
+➢ MultipartForm：获取所有 body 中提交的数据(multipart/form-dat) ，需要手动
+调用 ParseMutipartForm
+常用方法
+➢ ParseForm：解析提交的数据(url&body[application/x-www-form-urlencode]) ➢ FormValue：根据名称获取提交的数据，自动调用 ParseForm
+➢ PostFormValue：根据名称从 body 中获取提交的数据，自动调用 ParseForm
+➢ ParseMultipartForm：解析提交的数据(url*body[multipart/form-data])
+➢ FormFile：根据名称从 body 中获取提交的文件数据流对象，自动调用
+ParseMutipartForm，ParseForm
+
+⚫ Reponse
+常用属性
+➢ Status：响应状态
+➢ StatusCode:响应状态码
+➢ Proto：协议信息
+➢ Header：响应头
+➢ ContentLength：响应体字节数量
+➢ Body：响应体流对象
+常用方法
+➢ Cookies：cookie 信息
+➢ Location：location 信息
+➢ Write：将响应体写入输出流
+
+
+⚫ ResponseWriter（接口）
+常用方法：
+➢ Write：写入响应体
+➢ Header：写入响应头信息
+➢ WriteHeader：写入请求行状态码(在调用后不能 Write 和设置 Header 信息) ⚫ Header
+常用方法
+➢ Set：设置头信息
+➢ Add：添加头信息
+➢ Del：删除头信息
+➢ Get：获取头信息
+⚫ Cookie
+常用属性
+➢ Name：名称
+➢ Value：值
+➢ Path：路径
+➢ Domain：域名
+➢ Expires：过期时间
+➢ MaxAge：过期时间长度
+➢ Secure：是否只有 https 携带
+➢ HttpOnly：是否可使用 js 读取
+常用方法
+➢ String：将 cookie 对象转化为字符串
+
+d) 功能 --- 192页
+⚫ 服务端
+➢ 绑定/的请求处理器函数，用于获取 http 请求信息
+➢ 绑定/url/的请求处理器函数，用于获取 URL 中携带的参数信息
+➢ 绑定/urlencode/的请求处理器函数，
+用于获取使用application/x-www-form-urlencoded 编码的 body 中携带的参数信息
+➢ 绑定/multipart/的请求处理器函数，用于获取使用 multipart/form-data 编码的
+body 中携带的参数信息
+➢ 绑定 json 的请求处理器函数，用于获取使用 application/json 编码的 body 中携
+带的参数信息
+➢ 绑定/cookie/的请求处理器函数，用于获取 http 请求中 cookie 信息和设置响应
+中的 cookie 信息
+➢ 绑定/redirect/的请求处理器函数，用于请求重定向
+➢ 绑定/static/的请求处理器，用于静态文件请求响应
+➢ 启动服务
+
+⚫ 客户端
+➢ 发起 Head 请求
+➢ 发起 GET 请求
+➢ 发起 POST application/x-www-form-urlencoded 请求
+➢ 使用 client 发起原始请求
+
+3) rpc
+RPC 即远程过程调用(Remote Procedure Call)，用于构建计算机之间的通信协议，该协议允许
+运行于一台计算机的程序调用另一台计算机上的程序，开发人员无需对交互过程进行编程
+rpc 和 rpc/jsonrpc 包提供了对 RPC 的支持。rpc 构建于 TCP 或 HTTP 协议之上，底层数据编码
+使用 gob，因 gob 编码为 golang 自定义，所以无法支持跨语言调用；rpc/jsonrpc 构建于 TCP
+协议之上，底层数据编码使用 json，可支持跨语言调用
+net/rpc 包
+a) 常用函数
+⚫ Register:注册 RPC 服务
+⚫ RegisterName：注册 RPC 服务，并设置服务名称
+⚫ HandleHTTP: 使用 HTTP 构建的 RPC 服务
+⚫ ServeConn：处理客户端连接
+⚫ Accept：监听客户端连接并调用 ServeConn 进行处理
+手撕 Go 语言
+b) 常用结构体
+⚫ Server：RPC 服务端
+常用函数
+➢ NewServer：创建 RPC 服务端
+常用方法
+➢ Register：注册 RPC 服务
+➢ RegisterName：注册 RPC 服务，并设置服务名称
+➢ HandleHTTP：使用 HTTP 构建的 RPC 服务
+➢ ServeConn：处理客户端连接
+➢ Accept：监听客户端连接并调用 ServeConn 进行处理
+⚫ Client：RPC 客户端
+常用函数
+➢ Dial：连接使用 TCP 构建的 RPC 服务
+➢ DialHTTP：连接使用 HTTP 构建的 RPC 服务
+➢ NewClient：创建 RPC 客户端
+常用方法
+➢ Call：同步调用 RPC 服务
+➢ Go：异步调用 RPC 服务
+➢ Close：关闭客户端连接
+c) 功能
+⚫ 定义 RPC 结构体和方法
+RPC 结构体和方法必须为公开
+方法必须有两个参数和返回值 error，第一个为参数为请求结构体变量指针，用于
+获取客户端提交的参数，第二个参数为响应结构体指针变量，用于结果返回，返回
+值 error 用于告知客户端错误信息
+
+⚫ 基于 HTTP 协议的 RPC 服务和客户端 ---- 197
+➢ 服务端
+➢ 客户端
+
+
+⚫ 基于 TCP 协议的 RPC 服务和客户端 ---- 200
+➢ 服务端
+➢ 客户端
+
+
+⚫ 基于 JSONRPC 的服务和客户端
+➢ jsonrpc 包常用函数
+Dial：连接 JSONPRC
+ServeConn：处理客户端连接
+➢ 服务端
+➢ 客户端
+
+4) html/template 同 text/template 用于处理使用字符串模板和数据驱动生成安全
+的目标字符串（html 实体编码，防止注入攻击），在字符串模板中可使用数据显示、流程控制、
+函数、管道、子模板等功能
+
+
+
+

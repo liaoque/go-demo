@@ -1,0 +1,13 @@
+
+    The generate scaffold command will do a number of things for you.
+    -fields: a list of table fields. Format: field:type, ...
+
+bee generate scaffold [scaffoldname] [-fields=""] [-driver=mysql] [-conn="root:@tcp(127.0.0.1:3306)/test"]
+bee generate user_we_chat -fields="uid:int,we_chat_id:int, open_id:string,nick_name:string,gender:string,city:string,province:string,country:string,avatar_url:string,union_id:string" -driver=mysql -conn="root:@tcp(127.0.0.1:3306)/test"
+bee generate scaffold appWeChat -fields="id:int64,app_id:string:100,secret:string:256,access_token:string:256" -driver=mysql -conn="root:123456@tcp(127.0.0.1:3306)/test"
+
+
+bee generate appcode [-tables=""] [-driver=mysql] [-conn="root:@tcp(127.0.0.1:3306)/test"] [-level=3]
+bee generate appcode -tables="app_we_chat" -driver=mysql -conn="root:123456@tcp(127.0.0.1:3306)/test" -level=3
+
+bee generate model appWeChat -fields="id:int64,app_id:string:100,secret:string:256,access_token:string:256"

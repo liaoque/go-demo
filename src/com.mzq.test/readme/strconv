@@ -1,0 +1,12 @@
+strconv 包提供各基本数据类型和字符串类型之间的转换函数
+a) 常用函数
+⚫ Atoi:将字符串按十进制转换为 int 类型
+⚫ ParseBool：将字符串转换为 bool 类型
+⚫ ParseFloat：将字符串按指定格式转换为 float 类型
+⚫ ParseInt：将字符串按指定进制转换为 int 类型
+⚫ ParseUnit：将字符串按指定进制转换为 uint 类型
+⚫ Itoa：将 int 类型按十进制转化为字符串
+⚫ FormatBool：将 bool 类型转化为字符串
+⚫ FormatInt：将 int 类型按指定进制转化为字符串
+⚫ FormatUnit：将 uint 类型按指定进制转化为字符串
+⚫ FormatFloat：将 float 类型按指定格式转化为字符串

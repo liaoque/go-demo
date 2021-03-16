@@ -1,0 +1,53 @@
+1) base64
+encoding/base64 提供了对 base64 编码解码的支持
+a) 常用函数：
+⚫ base64.StdEncoding.EncodeToString：base64 编码
+⚫ base64.StdEncoding.DecodeString：base64 解码
+⚫ base64.URLEncoding.EncodeToString：base64URL 编码
+⚫ base64.URLEncoding.DecodeString：base64URL 解码
+⚫ base64.RawStdEncoding.EncodeToString：base64 编码(非对齐)
+⚫ base64.RawStdEncoding.DecodeString：base64 解码(非对齐)
+⚫ base64.RawURLEncoding.EncodeToString：base64URL 编码(非对齐)
+⚫ base64.RawURLEncoding DecodeString：base64URL 解码(非对齐)
+
+2) json
+encoding/json 包提供了对 json 字符串的序列化和反序列化功能，详见反射-应用
+
+3) Gob
+encoding/gob 包提供了对数据结构进行二进制序列化的功能
+a) 常用函数
+⚫ Register：注册 gob 编解码记录值
+⚫ RegisterName：注册 gob 编解码记录值，并指定名称
+b) 常用结构体
+⚫ Encoder
+常用函数
+➢ NewEncoder: 创建编码器
+常用方法
+➢ Encode：将对象进行编码到流对象中
+⚫ Decoder
+常用函数
+➢ NewDecoder：创建解码器
+常用方法
+➢ Decode:将流对象中的数据编码到对象中
+
+4) CSV
+encoding/csv 包提供对 csv 文件读写的操作
+a) 常用结构体
+⚫ Reader
+常用函数
+➢ NewReader
+常用方法
+➢ Read
+➢ ReadAll
+⚫ Writer
+常用函数
+➢ NewWriter
+常用方法
+➢ Write
+➢ WriteAll
+➢ Flush
+
+
+
+
+

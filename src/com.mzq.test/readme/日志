@@ -1,0 +1,28 @@
+1) log
+log 包提供了对日志记录的功能
+a) 常用方法
+⚫ Fatal:记录日志并退出程序
+⚫ Fatalf:按照指定格式记录日志并退出程序
+⚫ Fatalln：记录日志并退出程序，并在日志中写入换行
+⚫ Panic：记录日志并调用 panic
+⚫ Panicf：按照指定格式记录日志并调用 panic
+⚫ Panicln：记录日志并调用 panic，并在日志中写入换行
+⚫ Print：记录日志
+⚫ Printf：按照指定格式记录日志
+⚫ Println：记录日志，并在日志中写入换行
+⚫ Output：记录日志栈
+⚫ SetPrefix：设置日志前缀
+⚫ SetFlags：设置日志开头
+⚫ Flags：获取日志开头
+⚫ SetOutput：设置日志输出流
+
+b) 常用结构体
+⚫ Logger
+常用函数：
+➢ New：用与创建 logger 对象
+常用方法：见 log
+
+
+
+
+

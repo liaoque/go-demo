@@ -1,0 +1,37 @@
+bytes 包提供了操作 byte[]（字节切片）常用函数
+a) 类型转换
+可以将 string 通过函数 byte[]转化为字节切片，同时也可通过 string 函数将子接切片转
+化为 string
+b) 常用函数：见 strings 包
+
+c) 常用结构体
+⚫ Buffer
+Go 语言提供了可变大小的字节缓冲区 Buffer，实现了 io.Reader 和 io.Writer 接口，
+可以当作流来写入和读取
+常用函数：
+➢ NewBuffer:使用字节切片创建 Buffer 对象
+➢ NewBufferString:使用字符串创建 buffer 对象
+常用方法：
+➢ Bytes：将 buffer 对象转化为字节切片
+➢ String：将 buffer 对象转化为字符串
+➢ Read：读取字符串并放入到切片中
+➢ ReadFrom:从流中读入
+➢ ReadString：读取字符串，碰到分隔符位置
+➢ ReadBytes：读取字符切片，碰到分隔符位置
+➢ Write:将字节切片写入到 buffer 对象
+➢ WriteByte:将字节切片写入到 buffer 对象
+➢ WriteRune:将 rune 写入到 buffer 对象
+➢ WriteString:将字符串写入到 buffer 对象
+➢ WriteTo：将 buffer 对象中字符串写入到输出流中
+➢ Reset: 清空内容
+
+
+⚫ Reader
+Go 语言提供 Reader 结构体，可以将字节切片转化为 Reader 对象，当作流来读取
+常用函数：
+➢ NewReader:根据字符串创建 reader 对象指针
+常用方法：
+➢ Read：读取字节切片并写入到参数切片中
+➢ WriteTo：将 reader 对象中字符串写入到输出流中
+➢ Reset：更新 reader 对象字节切片内容
+➢ Seek：设置 reader 对象处理位置

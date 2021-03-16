@@ -1,0 +1,64 @@
+crypto 包中的子包提供了对常用加密算法的支持
+
+1) 随机数
+crypto/rand 模块提供了安全的随机数生成方法
+常用函数
+⚫ Read：读取随机字节到字节数组中
+
+2) MD5
+crypto/md5 包提供了对 md5 散列计算的支持
+常用函数
+a) New：创建 Hash 对象用于计算字节/字符 md5 值
+b) Sum：计算字节切片 md5 值
+
+
+3) sha1
+crypto/sha1 包提供了对 sha1 散列计算的支持
+常用函数
+a) New：创建 Hash 对象用于计算字节/字符 sha1 值
+b) Sum：计算字节切片 sha1 值
+
+
+4) sha256
+crypto/sha256 包提供了对 sha256 散列计算的支持
+常用函数
+c) New：创建 Hash 对象用于计算字节/字符 sha256 值
+d) Sum：计算字节切片 sha256 值
+
+5) sha512
+crypto/sha512 包提供了对 sha512 散列计算的支持
+常用函数
+a) New：创建 Hash 对象用于计算字节/字符 sha512 值
+b) Sum：计算字节切片 sha512 值
+
+
+6) hmac
+crypto/hmac 包提供了对 hmac 散列计算的支持
+常用函数
+a) New：创建 Hash 对象用于计算字节/字符 hmac 值
+b) Equal: 比较 hmac 值是否相等
+Hs256 实现：
+
+7) AES ---- 213
+crypto/aes 包提供了对 aes 计算的支持
+加密：
+解密：
+测试：
+
+
+8) DES --- 214
+crypto/des 包提供了对 des 计算的支持
+加密：
+解密：
+测试：
+
+9) RSA  ---- 216
+RSA 为非对称加密算法，使用公钥对数据加密/私钥进行解密，或使用私钥对数据进行签名/
+公钥进行验证。常用模块：crypto/rsa，crypto/x509，encoding/pem
+a) 公私钥生成
+b) 公钥加密
+c) 私钥解密
+d) 私钥签名
+e) 公钥验证
+
+

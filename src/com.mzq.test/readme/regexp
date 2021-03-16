@@ -1,0 +1,22 @@
+regexp 包提供了对正则表达式的支持
+a) 常用函数
+⚫ Match：测试字节切片是否匹配正则表达式字符串
+⚫ MatchString：测试字符串是否匹配正则表达式字符串
+⚫ MatchReader：测试 RuneReader 对象是否匹配正则表达式字符串
+⚫ QuoteMeta：将正则表达式使用的字符\.+*?()|[]^$等使用\进行转义
+
+b) 结构体
+⚫ Regexp
+常用函数： ➢ Compile：解析字符串为正则表达式对象指针
+➢ MustCompile：解析字符串为正则表达式对象指针，正则字符串解析失败报错
+常用方法： ➢ Find：在字节切片中查找第一个匹配的结果
+➢ FindString：在字符串中查找第一个匹配的结果
+➢ FindAll：在字节切片中查找所有匹配的结果
+➢ FindAllString：在字符串中查找所有匹配的结果
+➢ Longest：贪婪模式切换
+➢ Match：判断字节切片是否与正则表达式匹配
+➢ MathString：判断字符串是否与正则表达式匹配
+➢ ReplaceAll：替换匹配的所有字节切片
+➢ ReplaceAllString：替换匹配的所有字符串
+➢ Split：按照正则表达式分割为 N 个元素的字符串切片,N<0 分割所子串
+➢ String：将正则表达式转化为字符串类型

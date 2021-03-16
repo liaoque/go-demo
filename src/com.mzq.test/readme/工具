@@ -1,0 +1,41 @@
+1) flag
+flag 包提供命令行参数解析功能
+a) 常用属性
+Usage: 设置 flag 打印用法回调函数
+b) 常用函数
+⚫ Bool:设置 bool 类型参数名、默认值、帮助信息并返回解析 bool 的指针
+⚫ Int:设置 Int 类型参数名、默认值、帮助信息并返回解析 Int 的指针
+⚫ Uint:设置 Uint 类型参数名、默认值、帮助信息并返回解析 Uint 的指针
+⚫ Int64:设置 Int64 类型参数名、默认值、帮助信息并返回解析 Int64 的指针
+⚫ Uint64:设置 Uint64 类型参数名、默认值、帮助信息并返回解析 Uint64 的指针
+⚫ Float64:设置 Float64 类型参数名、默认值、帮助信息并返回解析 Float64 的指针
+⚫ String:设置 String 类型参数名、默认值、帮助信息并返回解析 String 的指针
+⚫ Duration:设置 Duration 类型参数名、默认值、帮助信息并返回解析 Duration 的指针
+⚫ BoolVar/IntVar/UintVar/Int64Var/Uint64Var/Float64Var/StringVar/DurationVar：设置
+Duration 类型参数名、默认值、帮助信息并将解析值通过参数指针设置给变量
+⚫ Parse:解析参数
+⚫ PrintDefaults：打印参数详情信息
+⚫ NFlag: 匹配设置参数名的参数个数
+⚫ NArg：匹配未设置参数名的参数个数
+⚫ Args：获取所有未设置参数名的参数值
+⚫ Arg：根据索引获取未设置参数名的参数值
+
+
+
+2) sort
+sort 包提供了对切片的排序和查找操作
+a) 常用函数
+⚫ Float64s: 对 float64 类型切片进行排序
+⚫ Float64sAreSorted：判断 float64 类型切片是否有序
+⚫ Ints：对 Int 类型切片排序
+⚫ IntsAreSorted:判断 Int 类型切片是否有序
+⚫ Strings：对 String 类型切片排序
+⚫ StringsAreSorted:判断 String 类型切片是否有序
+⚫ Slice：对切片通过自定义函数进行排序
+⚫ SliceIsSorted：通过自定义函数判断切片是否有序
+⚫ SliceStable：对切片通过自定义函数进行排序（相同元素保证原有顺序，稳定）
+⚫ Search：在有序切片中通过自定义迭代范围，并通过自定义函数查找数据插入的位
+置 ⚫ SearchFloat64s:在有序的 float64 类型切片中查找元素插入的位置
+⚫ SearchInts:在有序的 int 类型切片中查找元素插入的位置
+⚫ SearchStrings:在有序的 string 类型切片中查找元素插入的位置
+

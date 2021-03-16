@@ -1,0 +1,81 @@
+1) time
+a) 常用常量
+⚫ UTC：时区
+⚫ Second
+⚫ Minute
+⚫ Hour
+⚫ Millsecond
+⚫ Microsecond
+⚫ Nanosecond
+⚫ January
+⚫ February
+⚫ March
+⚫ April
+⚫ May
+⚫ June
+⚫ July
+⚫ August
+⚫ September
+⚫ October
+⚫ November
+⚫ December
+
+
+b) 常用函数
+⚫ After：创建延迟的时间管道
+⚫ Sleep：休眠
+⚫ Tick：创建定时器的时间管道
+
+
+c) 常用结构体
+⚫ Duration：时间区间
+常用函数：
+➢ ParseDuration: 解析时间字符为 Duration 类型，1.5h20m30s100ms
+➢ Since: 当前时间差， now-time
+➢ Until: 当前时间差，time – now
+
+
+常用方法： ➢ Hours：Duration 类型转化为 float64，单位为小时
+➢ Minutes：Duration 类型转化为 float64，单位为分钟
+➢ Seconds：Duration 类型转化为 float64，单位为秒
+➢ Nanoseconds：Duration 类型转化为 float64，单位为纳秒
+➢ String: Duration 类型转化为 String
+
+⚫ Time：时间
+常用函数：
+➢ Date：创建时间对象
+➢ Now：获取当前时间
+➢ Unix：将 unix 时间戳转变为时间对象
+➢ Parse：根据格式解析时间格式字符串，YYYY-mm-dd HH:MM:SS 格式使用：
+2006-01-02 15:04:05
+
+常用方法：
+➢ Format: 将时间转化为字符串格式，YYYY-mm-dd HH:MM:SS 格式使用：
+2006-01-02 15:04:05
+➢ Add：为时间添加区段，计算新的时间点
+➢ After：判断时间晚于参数时间
+➢ Before：判断时间早于参数时间
+➢ Clock：获取时、分、秒
+➢ Date：获取年、月、日
+➢ Equal：判断时间是否相同
+➢ Sub：计算时间差
+➢ Unix：将时间转化为 Unix 时间戳
+➢ UnixNano:将时间转化为 Unix 纳秒
+➢ String：时间对象转化为字符串
+
+⚫ Ticker：定时器（周期）
+常用属性：
+➢ C:时间类型管道
+常用函数:
+➢ NewTicker:创建定时器指针
+➢ Stop:停止
+
+⚫ Timer：定时器（延迟）
+常用属性：
+➢ C:时间类型管道
+常用函数：
+➢ NewTimer:创建定时器指针
+➢ Reset：重置延迟时间
+➢ Stop:停止
+
+

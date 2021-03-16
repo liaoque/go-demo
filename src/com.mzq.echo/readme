@@ -1,0 +1,25 @@
+##這是一個demo
+
+
+##### 重寫錯誤處理
+e.HTTPErrorHandler = http.MzqHTTPErrorHandler
+error： exception.NewExceptionMzq
+格式{"HttpCode":401,"Code":-1000,"Mes":"请登录" ...}
+
+
+##### 更改layui error處理
+可以兼容restful api
+
+
+##### 可配置參數
+使用 json 作為配置
+
+##### 中間件權限檢查
+jwt 驗證
+
+
+##### mysql操作
+管理員 的增刪查改
+
+
+

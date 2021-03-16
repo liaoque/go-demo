@@ -1,0 +1,38 @@
+1) math
+math 包提供常用的数据计算函数
+a) 常用常量
+⚫ Pi: 圆周率
+⚫ MaxIntN：对应字节长度整数类型最大值，N=8、16、32 或 64
+⚫ MinIntN：对应字节长度整数类型最下值，N=8、16、32 或 64
+⚫ MaxUIntN：对应字节长度无符号整数类型最大值，N=8、16、32 或 64
+⚫ MaxFloatN：对应字节长度浮点型最大值，N=32 或 64
+⚫ SmallestNonzeroFloatN：对应字节长度浮点型最小正数，N=32 或 64
+
+
+
+
+b) 常用函数
+⚫ Abs：float64 类型绝对值
+⚫ Ceil：float64 类型向上取整的浮点数
+⚫ Floor：float64 类型向下取整的浮点数
+⚫ Trunc：获取 float64 类型整数部分的浮点数
+⚫ Dim：获取两个 float64 类型值差和 0 的最大值
+⚫ Max：两个 float64 类型最大值 ⚫ Min：两个 float64 类型最小值
+⚫ Round：对 float64 类型四舍五入
+⚫ Pow：计算 float65 类型幂次
+⚫ Sqrt:计算 float64 平方根
+⚫ Mod：取两个 float64 类型的余数，符号与被除数相同
+⚫ Hypot：两个 float64 类型的平方和
+
+
+
+2) math/rand rand 包用于生成随机数
+a) 常用函数
+⚫ Seed：设置随机种子，常使用 time.Now().Unix()或 time.Now().UnixNano ()
+⚫ Int：生成一个整数随机数
+⚫ Intn：生成范围在[0, n)的随机数
+⚫ FloatN:生成指定字节长度在[0, 1)的随机浮点数,N=32 或 64
+⚫ IntN：生成指定字节长度的随机整数,N=31 或 63
+⚫ IntNn：生成指定字节长度在[0,n)的随机整数,N=31 或 63
+⚫ UintN：生成指定字节长度的随机整数,N=32 或 64
+
